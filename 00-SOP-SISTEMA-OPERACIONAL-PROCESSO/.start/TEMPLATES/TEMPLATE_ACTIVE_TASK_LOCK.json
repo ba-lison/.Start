@@ -1,0 +1,11 @@
+{
+  "path": ".memory/_ACTIVE_TASK.lock",
+  "unidade": "BUILD001_S01_T01",
+  "status": "RUNNING",
+  "started_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "workspace": "branch-or-worktree",
+  "base_commit": "git-sha-or-null",
+  "last_progress": "short verifiable statement",
+  "rodadas": [],
+  "note": "Optional marker, used only if .memory/DELIVERY.md adopts it. Repository state remains authoritative."
+}
