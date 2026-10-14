@@ -51,7 +51,7 @@ Substitua a pasta `.start/` do projeto pela versão nova e diga `Leia .start/INI
 
 ## O que NÃO copiar
 
-Não copie a pasta `.Start` inteira. As pesquisas e a `04-projetos/` confundiriam o agente, que poderia tratá-los como regra do projeto.
+Não copie a pasta `.Start` inteira. As pesquisas confundiriam o agente, que poderia tratá-las como regra do projeto.
 
 ## Ferramentas
 
@@ -65,4 +65,4 @@ Todo o conteúdo fica no `AGENTS.md` e na `.memory/`; não existe versão de reg
 - subagentes: `.start/CONTRATO-SUBAGENTE.md`
 - formato dos arquivos: `.start/FORMATO-LLM.md`
 - fluxo completo: `.start/PROTOCOLO_MESTRE_EXECUCAO.md`
-- exemplo preenchido: `06-exemplo-projeto-simple/` (na base de conhecimento)
+- exemplo preenchido: `05-exemplo-projeto-simple/` (na base de conhecimento)

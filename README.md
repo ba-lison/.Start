@@ -178,11 +178,11 @@ Todo onboarding começa por um [questionário de 7 perguntas](./00-SOP-SISTEMA-O
 ├── 01-memoria-agentes-ia/                 🧠 memória persistente e RAG
 ├── 02-build-release-engineering/          ⚙️ build, CI/CD, release e DORA
 ├── 03-especificacoes-documentacao-sdlc/   📝 SDD, PRD e documentação
-├── 05-pesquisas-v2/                       🔬 pesquisas que fundamentaram a V2/V3
-└── 06-exemplo-projeto-simple/             🧪 exemplo completo, do 1º chat à Release
+├── 04-pesquisas-v2/                       🔬 pesquisas que fundamentaram a V2/V3
+└── 05-exemplo-projeto-simple/             🧪 exemplo completo, do 1º chat à Release
 ```
 
-👉 Quer ver o kit em ação? Abra o [**exemplo de projeto**](./06-exemplo-projeto-simple/README.md): a memória inteira de um projeto real, da primeira conversa à Release.
+👉 Quer ver o kit em ação? Abra o [**exemplo de projeto**](./05-exemplo-projeto-simple/README.md): a memória inteira de um projeto real, da primeira conversa à Release.
 
 ---
 
@@ -199,7 +199,7 @@ Cada regra do kit tem pesquisa por trás. A biblioteca é material de consulta: 
 - [Padrão Orchestrator-Worker de Profundidade 1 contra Degradação de Contexto](./00-SOP-SISTEMA-OPERACIONAL-PROCESSO/pesquisas-de-embasamento/Padrao-Orchestrator-Worker-Profundidade-1-Anti-Degradacao-Contexto.md)
 - [Protocolo de Micro-Handoff Determinístico e Memory Bank](./00-SOP-SISTEMA-OPERACIONAL-PROCESSO/pesquisas-de-embasamento/Protocolo-Micro-Handoff-Deterministico-e-Memory-Bank.md)
 - [Sprint no Desenvolvimento de Software: Scrum e Métodos Ágeis](./00-SOP-SISTEMA-OPERACIONAL-PROCESSO/pesquisas-de-embasamento/Sprint-no-Desenvolvimento-de-Software-Scrum-Metodos-Ageis.md)
-- [Backlog de pesquisas](./00-SOP-SISTEMA-OPERACIONAL-PROCESSO/BACKLOG-PESQUISAS-V2.md) · [Pesquisas da V2 e matriz de decisões](./05-pesquisas-v2/README.md)
+- [Backlog de pesquisas](./00-SOP-SISTEMA-OPERACIONAL-PROCESSO/BACKLOG-PESQUISAS-V2.md) · [Pesquisas da V2 e matriz de decisões](./04-pesquisas-v2/README.md)
 
 </details>
 
