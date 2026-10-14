@@ -1,7 +1,7 @@
 # Backlog de Pesquisas da V2
 
 > **Objetivo:** listar o que ainda precisa de fundamentação antes de transformar o SOP V2 em regra definitiva.
-> **Status:** primeira rodada concluída. Sínteses salvas em `04-pesquisas-v2/` (na raiz da base); questões que dependem de escolha humana permanecem abertas.
+> **Status:** primeira rodada concluída. Sínteses salvas em `04-pesquisas-de-fundamentacao/` (na raiz da base); questões que dependem de escolha humana permanecem abertas.
 
 ---
 
