@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label=".Start v4.0 — Skill agnóstica de engenharia de software para agentes de IA">
+  <title>.Start v4.0 — Processo de engenharia para agentes de IA</title>
+  <rect width="1200" height="420" fill="#202725"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="418.5" fill="none" stroke="#F3F0E8" stroke-opacity="0.22" stroke-width="1.5"/>
+
+  <!-- Guias de construcao em papel sobre grafite -->
+  <g fill="none" stroke="#F3F0E8" stroke-width="1" stroke-opacity="0.24">
+    <path d="M0 52H1200M0 348H1200M64 0V420M736 52V348M1136 0V420"/>
+  </g>
+
+  <!-- Cotas diagonais 45 graus -->
+  <g fill="none" stroke="#F3F0E8" stroke-width="1.25" stroke-opacity="0.45">
+    <path d="M57 59L71 45M729 59L743 45M1129 59L1143 45"/>
+    <path d="M57 355L71 341M729 355L743 341M1129 355L1143 341"/>
+  </g>
+
+  <!-- Cruzes de eixo -->
+  <g fill="none" stroke="#F3F0E8" stroke-width="1.4" stroke-opacity="0.68">
+    <path d="M591 26H609M600 17V35M591 394H609M600 385V403"/>
+    <path d="M23 200H41M32 191V209M1159 200H1177M1168 191V209"/>
+  </g>
+
+  <g fill="#F3F0E8" fill-opacity="0.34">
+    <circle cx="64" cy="200" r="3"/>
+    <circle cx="1136" cy="200" r="3"/>
+  </g>
+
+  <!-- Seta tracejada -->
+  <g fill="none" stroke="#F3F0E8" stroke-width="1.35">
+    <path stroke-opacity="0.5" stroke-dasharray="6 5" d="M652 252C698 252 710 176 756 176"/>
+    <path stroke-opacity="0.72" stroke-linecap="round" stroke-linejoin="round" d="M749 170L757 176L749 182"/>
+  </g>
+
+  <!-- Barra superior -->
+  <g font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#C9CCC5" letter-spacing="1.4">
+    <text x="84" y="34">SOP · SKILL AGNÓSTICA DE ENGENHARIA</text>
+    <text x="1116" y="34" text-anchor="end">V4.0.0 · LICENÇA MIT</text>
+  </g>
+
+  <!-- Coluna principal esquerda -->
+  <text x="96" y="102" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C9CCC5" letter-spacing="1.5">MEMÓRIA DETERMINÍSTICA · GUARDRAILS · CIRCUIT BREAKERS</text>
+
+  <!-- Unico ponto musgo + titulo em Papel (contraste 13.4:1) -->
+  <circle cx="107" cy="188" r="9.5" fill="#5C6554"/>
+  <text x="128" y="197" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="88" font-weight="500" fill="#F3F0E8" letter-spacing="-2.4">Start</text>
+
+  <g font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="18.5" fill="#D9D6CE">
+    <text x="96" y="246">Processo de engenharia em Markdown puro para agentes de IA.</text>
+    <text x="96" y="274">O contexto sobrevive ao chat, o escopo não desvia e você decide.</text>
+  </g>
+
+  <text x="96" y="316" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#F3F0E8">$ npx skills add ba-lison/.Start</text>
+
+  <!-- Coluna direita: dois trilhos -->
+  <text x="772" y="102" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#C9CCC5" letter-spacing="1.4">DOIS TRILHOS PROPORCIONAIS</text>
+  <line x1="772" y1="116" x2="1104" y2="116" stroke="#F3F0E8" stroke-opacity="0.3" stroke-width="1"/>
+
+  <text x="772" y="144" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#C9CCC5" letter-spacing="1.2">01 · TRILHO LITE</text>
+  <text x="772" y="170" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="500" fill="#F3F0E8">3 arquivos em .memory/</text>
+  <text x="772" y="193" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" fill="#D9D6CE">Escopo em 1 bloco e código no mesmo chat.</text>
+
+  <line x1="772" y1="214" x2="1104" y2="214" stroke="#F3F0E8" stroke-opacity="0.18" stroke-width="1"/>
+
+  <text x="772" y="242" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#C9CCC5" letter-spacing="1.2">02 · TRILHO FULL</text>
+  <text x="772" y="268" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="500" fill="#F3F0E8">Ciclo SDD em 5 fases</text>
+  <text x="772" y="291" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="14" fill="#D9D6CE">PRD, SDD, Sprints, Tasks, Subagentes e Release.</text>
+
+  <line x1="772" y1="312" x2="1104" y2="312" stroke="#F3F0E8" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Carimbo inferior -->
+  <g font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#C9CCC5" letter-spacing="1.3">
+    <text x="84" y="388">CLAUDE CODE · CODEX · CURSOR · ANTIGRAVITY · OPENCODE</text>
+    <text x="1116" y="388" text-anchor="end">TECNOLOGIA COM TRAÇO HUMANO.</text>
+  </g>
+</svg>
