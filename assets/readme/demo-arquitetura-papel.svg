@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" role="img" aria-label="Arquitetura operacional do .Start v4: entrada somente-leitura, trilhos LITE e FULL, e circuit breaker de 3 rodadas">
+  <title>Fluxo Operacional .Start v4.0</title>
+  <rect width="1200" height="350" fill="#F3F0E8"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="348.5" fill="none" stroke="#202725" stroke-opacity="0.24" stroke-width="1.5"/>
+
+  <!-- Moldura de folha tecnica -->
+  <g fill="none" stroke="#202725" stroke-width="1" stroke-opacity="0.24">
+    <path d="M0 44H1200M0 284H1200M48 0V350M1152 0V350"/>
+  </g>
+  <g fill="none" stroke="#202725" stroke-width="1.2" stroke-opacity="0.45">
+    <path d="M42 50L54 38M1146 50L1158 38M42 290L54 278M1146 290L1158 278"/>
+  </g>
+
+  <g font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#4A504D" letter-spacing="1.3">
+    <text x="68" y="28">ARQUITETURA DO PROCESSO · CARREGAMENTO SOB DEMANDA</text>
+    <text x="1132" y="28" text-anchor="end">ZERO DUPLICAÇÃO NO PROJETO</text>
+  </g>
+
+  <!-- Bloco de Entrada (Esquerda) -->
+  <rect x="72" y="72" width="236" height="184" fill="#F8F6F0" stroke="#202725" stroke-opacity="0.38" stroke-width="1.2"/>
+  <rect x="72" y="72" width="236" height="6" fill="#202725"/>
+  <text x="90" y="104" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#4A504D" letter-spacing="1.2">ENTRADA · PASSO 0</text>
+  <text x="90" y="132" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="500" fill="#202725">Diagnóstico limpo</text>
+  <g font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="13.5" fill="#4A504D">
+    <text x="90" y="160">100% somente-leitura</text>
+    <text x="90" y="182">Checa Git, stack e .memory/</text>
+    <text x="90" y="204">Detecta NOVO · ADOTAR</text>
+    <text x="90" y="226">CONTINUAR · MIGRAR</text>
+  </g>
+
+  <!-- Setas de bifurcacao -->
+  <g fill="none" stroke="#202725" stroke-width="1.3" stroke-opacity="0.65">
+    <path stroke-dasharray="5 4" d="M308 132H364"/>
+    <path stroke-dasharray="5 4" d="M308 206H364"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M358 127L365 132L358 137M358 201L365 206L358 211"/>
+  </g>
+
+  <!-- Faixa Superior: Trilho LITE (Apoio Mineral #4C6972) -->
+  <rect x="372" y="72" width="756" height="82" fill="#F8F6F0" stroke="#202725" stroke-opacity="0.32" stroke-width="1"/>
+  <rect x="372" y="72" width="6" height="82" fill="#4C6972"/>
+  <rect x="394" y="88" width="96" height="22" fill="#4C6972"/>
+  <text x="442" y="103" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#F3F0E8" letter-spacing="1">TRILHO LITE</text>
+  <text x="506" y="104" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="15.5" font-weight="500" fill="#202725">Escopo + Guardrails em 1 bloco  →  Implementação e teste no mesmo chat  →  1 Commit</text>
+  <text x="394" y="134" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#4A504D">.memory/ enxuta: 00_INDEX.md · DECISIONS.md · HANDOFF.md  (scripts, automações, plugins curtos, POCs)</text>
+
+  <!-- Faixa Inferior: Trilho FULL (Destaque Musgo #5C6554) -->
+  <rect x="372" y="172" width="756" height="84" fill="#F8F6F0" stroke="#202725" stroke-opacity="0.32" stroke-width="1"/>
+  <rect x="372" y="172" width="6" height="84" fill="#5C6554"/>
+  <rect x="394" y="188" width="96" height="22" fill="#5C6554"/>
+  <text x="442" y="203" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#F3F0E8" letter-spacing="1">TRILHO FULL</text>
+  <text x="506" y="204" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="15.5" font-weight="500" fill="#202725">01 Onboarding  →  02 PRD  →  03 SDD &amp; Plano  →  04 Sprints / Tasks  →  05 Release</text>
+  <text x="394" y="236" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#4A504D">1 unidade por chat · Subagentes profundidade 1 (≤ 500 chars) · Rastreabilidade ponta a ponta</text>
+
+  <!-- Barra Inferior: Circuit Breaker (Apoio Terracota #A45543 sobre Papel) -->
+  <rect x="72" y="298" width="148" height="24" fill="#A45543"/>
+  <text x="146" y="314" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#F3F0E8" letter-spacing="0.8">CIRCUIT BREAKER</text>
+  <text x="236" y="315" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#202725">Máx. 3 rodadas por objetivo · Repetiu erro sem hipótese nova → PARE e pergunte · Zero Delete</text>
+</svg>

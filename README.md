@@ -1,136 +1,101 @@
-<div align="center">
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-grafite.svg">
-  <img alt=".Start v4.0 — Processo de engenharia em Markdown puro para agentes de IA" src="./assets/hero-papel.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/hero-grafite.svg">
+  <img src="assets/readme/hero-papel.svg" alt=".Start · Processo e memória para agentes de IA" width="100%">
 </picture>
 
-<br>
+<h1 align="center">.Start</h1>
 
-[![Versão 4.0.0](https://img.shields.io/badge/versão-4.0.0-5C6554?style=flat-square&labelColor=202725)](./skills/start/SKILL.md)
-[![Formato Skill](https://img.shields.io/badge/formato-skill_agnóstica-4C6972?style=flat-square&labelColor=202725)](./docs/COMO-USAR.md)
-[![Licença MIT](https://img.shields.io/badge/licença-MIT-5C6554?style=flat-square&labelColor=202725)](./LICENSE)
-[![Idioma pt-BR](https://img.shields.io/badge/idioma-pt--BR-4C6972?style=flat-square&labelColor=202725)](#)
+<p align="center">Processo de engenharia e memória de projeto para agentes de IA, em dois trilhos proporcionais ao trabalho.</p>
 
-</div>
+<p align="center">
+  <img alt="formato: skill" src="https://img.shields.io/badge/formato-skill-4C6972?style=flat-square&amp;labelColor=202725">
+  <img alt="idioma: pt-BR" src="https://img.shields.io/badge/idioma-pt--BR-5C6554?style=flat-square&amp;labelColor=202725">
+  <a href="https://github.com/ba-lison/.Start/blob/main/LICENSE"><img alt="licença: MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-5C6554?style=flat-square&amp;labelColor=202725"></a>
+</p>
 
----
-
-## O problema que o `.Start` resolve
-
-Agentes de IA escrevem código rápido, mas esquecem decisões quando o chat vira, alteram arquivos fora do combinado e entram em loop tentando consertar o mesmo erro.
-
-Na **v4.0**, o `.Start` deixou de ser uma pasta de 39 arquivos copiada dentro de cada projeto e virou uma **Skill agnóstica modular** ([`skills/start/`](./skills/start/)). O motor fica instalado nas skills do seu agente; no repositório do seu produto entra apenas a pasta `.memory/` com o que realmente pertence ao projeto.
-
-- **Memória que sobrevive ao chat:** estado atual, decisões e handoffs ficam em `.memory/` e são conferidos contra o `git status` real na abertura de cada sessão.
-- **Você decide o que importa:** escopo, arquitetura, schema, dependências, segurança e exclusões exigem sua confirmação e ficam registrados em `DECISIONS.md`.
-- **Circuit breaker anti-loop:** teto padrão de **3 rodadas** por objetivo (tentar + verificar). Se o erro se repetir sem hipótese nova, o agente para, registra o bloqueio e pergunta.
-- **Subagentes sob controle:** profundidade máxima 1, arquivos permitidos isolados e relatório limitado a **500 caracteres** para proteger o contexto principal.
+<p align="center">
+  <a href="#começar-a-usar">Começar a usar</a> &nbsp; / &nbsp;
+  <a href="#demonstração-e-recursos">Ver recursos</a> &nbsp; / &nbsp;
+  <a href="#documentação-e-ajuda">Documentação</a>
+</p>
 
 ---
 
-## Começar em 30 segundos
+## Sobre o projeto
 
-### 1. Instale a skill
+O .Start é uma skill para orientar agentes de IA durante projetos de software. Ela organiza o diagnóstico inicial, o escopo, as decisões e a continuidade entre conversas, mantendo o motor do processo nas skills do agente e os registros específicos do produto em .memory/ dentro do repositório.
 
-```bash
-npx skills add ba-lison/.Start
-```
+Na versão 4, a antiga pasta extensa copiada para cada projeto deu lugar a uma skill modular: referências e modelos são lidos quando necessários. O método atende desde scripts, automações e plugins curtos até produtos com vários módulos e etapas de entrega. A proposta é manter decisões visíveis, conferir o estado real do Git e registrar o ponto de retomada sem carregar todo o processo em cada conversa.
 
-Prefere instalar manualmente sem CLI? Copie [`skills/start`](./skills/start/) para `.claude/skills/start` (no projeto ou na sua pasta global `~/.claude/skills/start`) e crie o atalho agnóstico para `.agents/skills` conforme o [guia de instalação](./docs/COMO-USAR.md).
+O agente primeiro identifica se vai iniciar um projeto, adotar o processo em um código existente, continuar uma memória ativa ou migrar uma estrutura antiga. A partir desse diagnóstico, recomenda um fluxo de trabalho e apresenta o escopo para confirmação.
 
-### 2. Acione no seu projeto
+## Demonstração e recursos
 
-Abra o **Claude Code**, **Codex**, **Cursor**, **Antigravity** ou **OpenCode** na pasta do repositório e envie:
+### Dois trilhos
 
-```text
-/start
-```
+| Trilha | Indicada para | Memória do projeto |
+| --- | --- | --- |
+| **LITE** | Scripts, automações, CLIs simples, plugins curtos, POCs e tarefas pequenas. | Três arquivos: <code>00_INDEX.md</code>, <code>DECISIONS.md</code> e <code>HANDOFF.md</code>. |
+| **FULL** | SaaS, produtos médios ou grandes, vários módulos, equipes ou operação de maior risco. | Estrutura modular para contexto, guardrails, PRD, SDD, builds, sprints, tarefas e releases. |
 
-*(No Codex: `$start` · Ou em texto livre: `"Iniciar projeto com a skill start"` / `"Continuar projeto"`).*
+No LITE, o escopo e os guardrails são confirmados em um bloco curto e a implementação pode seguir na mesma conversa após a aprovação. No FULL, o trabalho avança por unidades, como onboarding, PRD, plano de build, tarefas e release. Ambos registram decisões e handoffs; o tamanho da estrutura acompanha o trabalho.
 
-O agente faz um diagnóstico **100% somente-leitura** antes de tocar em qualquer arquivo, detecta o modo certo e pede sua confirmação.
-
----
-
-## Dois trilhos proporcionais ao projeto
-
-Nem todo código precisa de cinco fases formais. Na entrada, o agente recomenda o trilho pelo tamanho real do trabalho — e carrega apenas os templates daquele trilho sob demanda:
+### Fluxo de entrada
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/arquitetura-grafite.svg">
-  <img alt="Fluxo operacional do .Start v4: diagnóstico somente-leitura, trilho LITE, trilho FULL e circuit breaker" src="./assets/arquitetura-papel.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/demo-arquitetura-grafite.svg">
+  <img alt="Diagnóstico inicial e escolha entre os trilhos LITE e FULL" src="assets/readme/demo-arquitetura-papel.svg" width="100%">
 </picture>
 
-| Critério | Trilho `LITE` *(Rápido)* | Trilho `FULL` *(SDD Completo)* |
-| :--- | :--- | :--- |
-| **Quando usar** | Scripts, automações, CLIs, plugins curtos, POCs e features de 1 a 3 sessões | SaaS, sistemas médios/grandes, múltiplos módulos ou operação compartilhada/crítica |
-| **Arquivos em `.memory/`** | **Apenas 3:** `00_INDEX.md`, `DECISIONS.md` e `HANDOFF.md` | Estrutura completa sob demanda (`PRD`, `SDD`, `DELIVERY`, `BUILDS`, `SPRINTS`, `TASKS`, `RELEASES`) |
-| **Guardrails na largada** | Confirmados junto com o mini-escopo em **1 única mensagem** | Confirmados em **1 bloco único** na unidade `ONBOARDING` |
-| **Ritmo de execução** | Planeja e já implementa no mesmo chat após o seu *"Aprovo"* | 1 unidade atômica por chat (`Task` ou `Sprint` orquestrada com subagentes) |
-| **Fechamento Git** | 1 commit local limpo por entrega | 1 commit local atômico por unidade + rastreabilidade de Release |
+Os modos de entrada cobrem projeto novo (<code>NOVO</code>), código existente sem memória (<code>ADOTAR</code>), projeto com <code>.memory/</code> ativa (<code>CONTINUAR</code>) e estruturas legadas (<code>MIGRAR</code>). Em cada caso, o agente segue a sequência e os modelos correspondentes, em vez de carregar todos os arquivos de apoio de uma vez.
+
+## Começar a usar
+
+### Instalar e iniciar
+
+A forma rápida indicada no repositório usa a CLI <code>skills</code>:
+
+    npx skills add ba-lison/.Start
+
+Também é possível instalar manualmente copiando a pasta <code>skills/start</code> para o diretório de skills do agente. O [guia de uso](https://github.com/ba-lison/.Start/blob/main/docs/COMO-USAR.md) mostra os caminhos para Claude Code, Codex, Cursor, Antigravity/Gemini e OpenCode, incluindo a opção de compartilhamento agnóstico por <code>.agents/skills</code>.
+
+Abra a pasta do projeto de software no agente e acione <code>/start</code>; no Codex, use <code>$start</code>. Em linguagem natural, também é possível pedir para iniciar ou continuar um projeto com a skill. O primeiro passo é um diagnóstico somente de leitura. O agente resume o que encontrou, recomenda LITE ou FULL e pede confirmação antes de criar ou alterar arquivos. Ao adotar um repositório, a inspeção inclui código, instruções existentes e estado do Git. Ao continuar, confere o repositório e o último handoff.
+
+Após a confirmação, os arquivos de memória ficam no próprio projeto. Eles registram o contexto e as decisões daquele produto; a instalação da skill fornece o método. O .Start orienta o agente e não cria isolamento de arquivos ou uma barreira técnica contra alterações: permissões e proteções continuam dependendo do ambiente usado.
+
+## Documentação e ajuda
+
+### Guias e referências
+
+- [Instalação, uso e convivência com workspaces](https://github.com/ba-lison/.Start/blob/main/docs/COMO-USAR.md)
+- [Instruções principais da skill](https://github.com/ba-lison/.Start/blob/main/skills/start/SKILL.md)
+- [Modos de entrada](https://github.com/ba-lison/.Start/blob/main/skills/start/references/modos-entrada.md)
+- [Guardrails e decisões](https://github.com/ba-lison/.Start/blob/main/skills/start/references/guardrails-e-decisoes.md)
+- [Etapas do trilho FULL](https://github.com/ba-lison/.Start/blob/main/skills/start/references/fases-full.md)
+- [Exemplo de memória FULL preenchida](https://github.com/ba-lison/.Start/blob/main/docs/exemplos/full-sdd/README.md)
+- [Biblioteca de pesquisas](https://github.com/ba-lison/.Start/blob/main/docs/pesquisas/README.md)
+
+Os materiais de pesquisa mantêm as fontes consultadas para fundamentar as regras. Para relatar um problema ou sugerir uma melhoria, use as issues do repositório: https://github.com/ba-lison/.Start/issues.
+
+### Créditos e materiais de terceiros
+
+Os materiais de pesquisa mantêm a atribuição a seus autores e fontes originais.
+
+## Autoria e licença
+
+Desenvolvido por [Alison Cruz](https://github.com/ba-lison) · **BALISON**.
+
+Distribuído sob a [licença MIT](https://github.com/ba-lison/.Start/blob/main/LICENSE).
 
 ---
 
-## Quatro modos automáticos de entrada
-
-| O que o agente encontra na pasta | Modo | Como age |
-| :--- | :--- | :--- |
-| Pasta vazia / projeto do zero | **`NOVO`** | Confirma trilho (`LITE` ou `FULL`) + guardrails e estrutura `.memory/` e `AGENTS.md` |
-| Código existente sem `.memory/` | **`ADOTAR`** | Faz diagnóstico somente-leitura (stack, comandos reais, Git, riscos) sem mover nem apagar nada |
-| `.memory/` ativa | **`CONTINUAR`** | Confere `git status` e `HEAD` contra o último handoff antes de anunciar o próximo passo |
-| Versão antiga (`.start/` v3 ou `docs/` v2) | **`MIGRAR`** | Migra com `git mv` e política *Zero Delete* (arquivos substituídos vão intactos para `_backup_original/`) |
-
----
-
-## Skills complementares recomendadas
-
-O `.Start` roda sozinho sem dependências externas. Se quiser enxugar ainda mais o código gerado e a leitura de repositórios grandes, combine-o com estas duas skills abertas:
-
-| Skill | Repositório | Por que combina com o `.Start` |
-| :--- | :--- | :--- |
-| **Ponytail** | [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail) | Disciplina de desenvolvedor sênior enxuto: menor mudança que resolve a tarefa inteira, zero abstração prematura e 1–2 linhas finais apontando riscos e o que não foi verificado. |
-| **Graphify** | [`Graphify-Labs/graphify`](https://github.com/Graphify-Labs/graphify) | Constrói o grafo arquitetural do código via AST (`--no-viz` → `GRAPH_REPORT.md`), poupando tokens na etapa de diagnóstico de projetos médios e grandes no modo `ADOTAR`. |
-
----
-
-## O que há neste repositório
-
-```text
-.Start/
-├── skills/
-│   └── start/                  # A skill agnóstica v4.0 (SKILL.md + references/ + templates/)
-├── docs/
-│   ├── COMO-USAR.md            # Guia direto de instalação, uso e convivência com workspaces
-│   ├── exemplos/               # Exemplo completo de memória preenchida do início à Release
-│   └── pesquisas/              # Biblioteca técnica que fundamentou cada regra do processo
-├── assets/                     # Pranchas visuais e assinatura (temas claro e escuro)
-└── LICENSE                     # Licença MIT
-```
-
-- **Guia prático:** [`docs/COMO-USAR.md`](./docs/COMO-USAR.md)
-- **Exemplo de `.memory/` completa:** [`docs/exemplos/full-sdd/`](./docs/exemplos/full-sdd/)
-- **Biblioteca de pesquisas (Memória de Agentes, Build/Release, DORA, SDD e Circuit Breakers):** [`docs/pesquisas/`](./docs/pesquisas/)
-- **Versão anterior em pasta (`.start/` v3.0.0):** preservada integralmente na tag Git [`v3.0.0`](https://github.com/ba-lison/.Start/tree/v3.0.0)
-
----
-
-## Licença
-
-Distribuído sob a licença [**MIT**](./LICENSE). Uso livre em projetos pessoais e comerciais.
-
-<br>
-
-<div align="center">
-
-<a href="https://github.com/ba-lison">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/assinatura-grafite.svg">
-    <img alt="Alison · BALISON" src="./assets/assinatura-papel.svg" height="28">
-  </picture>
-</a>
-
-<br>
-<sub>Tecnologia com traço humano.</sub>
-
-</div>
+<p align="center">
+  <a href="https://github.com/ba-lison">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/assinatura-grafite.svg">
+      <img src="assets/readme/assinatura-papel.svg" alt="Alison · BALISON" width="280" height="28">
+    </picture>
+  </a>
+  <br>
+  <sub>Tecnologia com traço humano.</sub>
+</p>
